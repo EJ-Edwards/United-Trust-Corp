@@ -3,10 +3,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * VIEW CLASS - Welcome page GUI
- * This is the entry point for your banking application
- */
 public class WelcomePage extends JFrame {
     private BankingController controller;
     private JTextField customerIdField;
@@ -19,13 +15,29 @@ public class WelcomePage extends JFrame {
     private void initializeGUI() {
         setTitle("United Trust Corp - Banking System");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(500, 400);
+        setSize(600, 700); // Increased size to accommodate logo and all components
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // Create header
-        JPanel headerPanel = createHeaderPanel();
-        add(headerPanel, BorderLayout.NORTH);
+        // Try to load logo image
+        try {
+            ImageIcon originalIcon = new ImageIcon("resources/images/ChatGPT Image Oct 5, 2025, 10_32_15 PM.png");
+            Image scaledImage = originalIcon.getImage().getScaledInstance(120, 120, Image.SCALE_SMOOTH); // Better proportions for square logo
+            ImageIcon scaledIcon = new ImageIcon(scaledImage);
+            JLabel logoLabel = new JLabel(scaledIcon);
+            logoLabel.setHorizontalAlignment(JLabel.CENTER);
+            logoLabel.setBorder(BorderFactory.createEmptyBorder(15, 10, 15, 10));
+            
+            // Add logo to header panel
+            JPanel headerWithLogo = createHeaderPanel();
+            headerWithLogo.add(logoLabel, BorderLayout.NORTH);
+            add(headerWithLogo, BorderLayout.NORTH);
+        } catch (Exception e) {
+            // If image fails to load, just use the regular header
+            System.out.println("Could not load logo image: " + e.getMessage());
+            JPanel headerPanel = createHeaderPanel();
+            add(headerPanel, BorderLayout.NORTH);
+        }
 
         // Create main content
         JPanel mainPanel = createMainPanel();
@@ -39,14 +51,14 @@ public class WelcomePage extends JFrame {
     private JPanel createHeaderPanel() {
         JPanel panel = new JPanel();
         panel.setBackground(new Color(0, 102, 204));
-        panel.setBorder(BorderFactory.createEmptyBorder(30, 20, 30, 20));
+        panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 25, 20)); // Adjusted padding
 
         JLabel titleLabel = new JLabel("United Trust Corp", JLabel.CENTER);
-        titleLabel.setFont(new Font("Arial", Font.BOLD, 28));
+        titleLabel.setFont(new Font("Arial", Font.BOLD, 24)); // Slightly smaller to fit better
         titleLabel.setForeground(Color.WHITE);
 
         JLabel subtitleLabel = new JLabel("Banking System", JLabel.CENTER);
-        subtitleLabel.setFont(new Font("Arial", Font.PLAIN, 16));
+        subtitleLabel.setFont(new Font("Arial", Font.PLAIN, 14));
         subtitleLabel.setForeground(Color.WHITE);
 
         panel.setLayout(new BorderLayout());
@@ -58,31 +70,37 @@ public class WelcomePage extends JFrame {
 
     private JPanel createMainPanel() {
         JPanel panel = new JPanel(new GridBagLayout());
-        panel.setBorder(BorderFactory.createEmptyBorder(40, 40, 40, 40));
+        panel.setBorder(BorderFactory.createEmptyBorder(30, 50, 30, 50)); // Better spacing for larger window
         GridBagConstraints gbc = new GridBagConstraints();
 
         // Customer ID input
         gbc.gridx = 0; gbc.gridy = 0;
-        gbc.insets = new Insets(10, 10, 10, 10);
-        panel.add(new JLabel("Customer ID:"), gbc);
+        gbc.insets = new Insets(15, 15, 15, 15); // More spacing between elements
+        gbc.anchor = GridBagConstraints.EAST;
+        JLabel idLabel = new JLabel("Customer ID:");
+        idLabel.setFont(new Font("Arial", Font.BOLD, 14));
+        panel.add(idLabel, gbc);
 
         gbc.gridx = 1; gbc.gridy = 0;
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        customerIdField = new JTextField(15);
+        gbc.anchor = GridBagConstraints.WEST;
+        customerIdField = new JTextField(20); // Wider text field
         customerIdField.setFont(new Font("Arial", Font.PLAIN, 14));
+        customerIdField.setPreferredSize(new Dimension(200, 30));
         panel.add(customerIdField, gbc);
 
         // Buttons
         gbc.gridx = 0; gbc.gridy = 1;
         gbc.gridwidth = 2;
-        gbc.fill = GridBagConstraints.BOTH;
-        gbc.insets = new Insets(20, 10, 10, 10);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.insets = new Insets(25, 15, 15, 15);
         
         JButton loginButton = createStyledButton("Login", new Color(0, 150, 0));
         loginButton.addActionListener(new LoginListener());
         panel.add(loginButton, gbc);
 
         gbc.gridy = 2;
+        gbc.insets = new Insets(15, 15, 15, 15);
         JButton createAccountButton = createStyledButton("Create New Customer", new Color(0, 102, 204));
         createAccountButton.addActionListener(new CreateCustomerListener());
         panel.add(createAccountButton, gbc);
@@ -98,7 +116,7 @@ public class WelcomePage extends JFrame {
     private JPanel createFooterPanel() {
         JPanel panel = new JPanel();
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        JLabel footerLabel = new JLabel("© 2025 United Trust Corp. All rights reserved.", JLabel.CENTER);
+        JLabel footerLabel = new JLabel("2025 United Trust Corp. All rights reserved.", JLabel.CENTER);
         footerLabel.setFont(new Font("Arial", Font.PLAIN, 12));
         footerLabel.setForeground(Color.GRAY);
         panel.add(footerLabel);
@@ -109,10 +127,10 @@ public class WelcomePage extends JFrame {
         JButton button = new JButton(text);
         button.setBackground(color);
         button.setForeground(Color.WHITE);
-        button.setFont(new Font("Arial", Font.BOLD, 14));
+        button.setFont(new Font("Arial", Font.BOLD, 16)); // Larger font for bigger window
         button.setFocusPainted(false);
         button.setBorder(BorderFactory.createRaisedBevelBorder());
-        button.setPreferredSize(new Dimension(200, 40));
+        button.setPreferredSize(new Dimension(250, 45)); // Larger buttons
         return button;
     }
 
@@ -158,5 +176,3 @@ public class WelcomePage extends JFrame {
         });
     }
 }
-
-    
