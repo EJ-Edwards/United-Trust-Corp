@@ -1,1 +1,202 @@
-BankAccount.class
+# Java compiled files
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+
+# Package Files
+*.tar.gz
+*.rar
+*.zip
+
+# Virtual machine crash logs
+hs_err_pid*
+replay_pid*
+
+# IDE Files
+## IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+## Eclipse
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.project
+.classpath
+.factorypath
+.buildpath
+.target
+
+## NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+## VS Code
+.vscode/
+*.code-workspace
+
+# OS generated files
+## Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+## macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+## Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Build tools
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Application specific files
+## Log files
+*.log
+logs/
+log/
+
+## Database files
+*.db
+*.sqlite
+*.sqlite3
+
+## Configuration files with sensitive data
+config.properties
+secrets.properties
+*.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+## Backup files
+*.backup
+*.bak
+*.old
+
+## Temporary files
+temp/
+tmp/
+*.tmp
+
+# Banking application specific
+## Customer data files (if you add file persistence later)
+customer_data/
+account_data/
+transactions/
+*.dat
+
+## Reports and exports
+reports/
+exports/
+*.csv
+*.xlsx
+*.pdf
+
+# Documentation build files
+docs/_build/
+site/
+
+# Test coverage reports
+coverage/
+*.coverage
+.nyc_output
+
+# Dependency directories
+node_modules/ (if you add any Node.js tools)
+vendor/ (if you add any PHP tools)
+
+# Editor backup files
+*~
+*.swp
+*.swo
+*#
+.#*
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# Java documentation
+javadoc/
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
