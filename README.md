@@ -4,11 +4,13 @@
   <img src="https://github.com/user-attachments/assets/c52a1e4b-b1cb-4f84-b16e-9dc84cfb687f" alt="United Trust Corp Banking System" width="400">
   
   **Professional Java Banking Application**
+  
+  *Desktop application that runs locally with MySQL database*
 </div>
 
 ## 🎯 What This Is
 
-A complete banking management system built with **Java Swing** and **MySQL**. This project demonstrates professional software development skills including MVC architecture, database integration, and modern GUI design.
+A complete banking management system built with **Java Swing** and **MySQL** that runs locally on your machine. This project demonstrates professional software development skills including MVC architecture, database integration, and GUI design.
 
 ## 🚀 Key Features
 
@@ -43,8 +45,10 @@ Controller/- BankingController (business logic)
 
 - **Java 8+** - Core programming language
 - **Swing** - Desktop GUI framework
-- **MySQL** - Database management
+- **MySQL** - Local database management
 - **Git** - Version control
+- **JDBC** - Local database connectivity
+
 
 ## 🎨 Interface Design
 
