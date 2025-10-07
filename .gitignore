@@ -1,14 +1,14 @@
 # Java compiled files
 *.class
-*.jar
 *.war
 *.ear
 *.nar
 
-# Package Files
+# Package Files - but keep MySQL connector
 *.tar.gz
 *.rar
 *.zip
+# Note: mysql-connector-j-8.0.33.jar should be committed for easy setup
 
 # Virtual machine crash logs
 hs_err_pid*
@@ -152,6 +152,11 @@ account_data/
 transactions/
 *.dat
 
+## Database credentials (if you externalize them)
+database.properties
+db.config
+credentials.txt
+
 ## Reports and exports
 reports/
 exports/
@@ -200,3 +205,6 @@ javadoc/
 *.zip
 *.tar.gz
 *.rar
+
+# Exception: Keep MySQL connector for easy setup
+!mysql-connector-j-*.jar
